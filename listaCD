@@ -1,11 +1,11 @@
-listaCD = [] # Cria 0 vetor listaCD
+listaCD = [] # Cria o vetor listaCD
 def exibirMenu(): # Define a função exibeMenu
     print("1 - Inserir novo CD") # Ecreve texto orientativo na saída
     print("2 - Excluir CD") # Ecreve texto orientativo na saída
     print("3 - Listar CDs") # Ecreve texto orientativo na saída
     print("4 - Sair") # Ecreve texto orientativo na saída
     opcao = int(input("Escolha uma opcao: ")) # Cria a variável a partir do valor digitado pelo usuário
-    return opcao
+    return opcao #retorna o valor da variável opcao para quem chama a função exibirMenu()
 
 def inserirCD(): # Define a função que insere um item a lista "listaCD"
     novoCD = input("Digite o nome do Artista: ")  # Cria a variável a partir do valor digitado pelo usuário
