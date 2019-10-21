@@ -1,0 +1,40 @@
+listaCD = [] # Cria 0 vetor listaCD
+def exibirMenu(): # Define a função exibeMenu
+    print("1 - Inserir novo CD") # Ecreve texto orientativo na saída
+    print("2 - Excluir CD") # Ecreve texto orientativo na saída
+    print("3 - Listar CDs") # Ecreve texto orientativo na saída
+    print("4 - Sair") # Ecreve texto orientativo na saída
+    opcao = int(input("Escolha uma opcao: ")) # Cria a variável a partir do valor digitado pelo usuário
+    return opcao
+
+def inserirCD(): # Define a função que insere um item a lista "listaCD"
+    novoCD = input("Digite o nome do Artista: ")  # Cria a variável a partir do valor digitado pelo usuário
+    listaCD.append(novoCD) #Insere o valor da variável novoCD no após o ultimo item do vetor lista CD
+
+def listarCD(): # Define a função para listar o conteudo da lista ""listaCD
+    for elemento in listaCD: #laço de repetição que percorre a lista e a cada iteração imprime um elemento da lista
+        print (elemento) #imprime o elemento
+
+def excluirCD(): # Define a função para excluir elementos da lista
+    nomeCD = input("Nome do CD que deseja excluir:") #Variável que recebe o nome do cd que se deseja excluir
+    indice = -1 # variável recebe -1 para considerar o indice 0 quando o proximo laço incrementar o indice e assim sincronizar o indice do vetor com a variável indice
+    encontrou = False # estabelece que a variável que inicia função de deletar o elemento do vetor esteja inativa até achar o elemento
+    for elemento in listaCD: # percorre cada item do vetor "listaCD"
+        indice += 1 #incrementa a variavel atraves do laço, referenciando ao indice do vetor
+        if elemento == nomeCD: #Função que compara se o elemento na iteração do laço é igual ao valor digitado pelo usuário
+            encontrou = True #se o valor digitado for encontrado, define a variável encontrou como verdadeira
+            break #Para o laço de repetição quando encontra o valor
+    if (encontrou): #Função para deletar registro do vetor
+        del listaCD[indice] #Deleta o elemento da "listaCD", no indice correspondente ao valor da variável "indice"
+
+
+while True: #Laço de repetição que apresenta o menu ao usuário até que este digite a opção 4
+    opcao = exibirMenu()  #recebe a opção vinda da função exibeMenu
+    if opcao == 4: #compara se a opção foi 4
+        break #para o laço de repetição
+    elif opcao == 3: #compara se a opção foi 3
+        listarCD() #Chama a função listaCD e imprime os cds contidos na lista
+    elif opcao == 1: #compara se a opção foi 1
+        inserirCD() #Chama a função insereCD e adiciona um cd ao final da lista
+    elif opcao == 2: #compara se a opção foi 2
+        excluirCD() #exclui o cd de acordo com o nome informado, se este esta no vetor
